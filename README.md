@@ -44,7 +44,7 @@ If you want to see how the program works in practice, here is a quick experiment
 **Step 4:** Let's check if everything is okay. Type:
 > `./integrity-check check test.txt`
 **Expected result:** `Status: Unmodified` 
-*(Comment: Makes sense! Nobody touched the file, so the hash matches the one we saved in Step 3).*
+Makes sense! Nobody touched the file, so the hash matches the one we saved in Step 3
 
 **Step 5: Time to "hack" the file!** 
 Open `test.txt` (for example, with Notepad), add just one extra letter or space, and save it.
@@ -52,7 +52,7 @@ Open `test.txt` (for example, with Notepad), add just one extra letter or space,
 **Step 6:** Let's run the check again to see if the program notices the difference. Type:
 > `./integrity-check check test.txt`
 **Expected result:** `Status: Modified (Hash mismatch)`
-*(Comment: See that? The status changed! Even one added letter changes the entire cryptographic hash of the file. This is exactly the goal of the program - to alert us immediately if someone touched or changed our files without permission!)*
+See that? The status changed! Even one added letter changes the entire cryptographic hash of the file. This is exactly the goal of the program - to alert us immediately if someone touched or changed our files without permission!)
 
 **Step 7:** If we want to tell the program "Relax, I made this change legally", we just update the hash:
 > `./integrity-check update test.txt`
