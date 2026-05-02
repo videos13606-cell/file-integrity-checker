@@ -28,12 +28,34 @@ when you are testing the project).
 - Checks individual files against their stored hashes (`check`)
 - Lets you update the stored hash after legitimate changes (`update`)
 
-## Try It Yourself!
+## Try it yourself (Step-by-Step Guide)
 
-1. Run the program and type init to create baseline hashes
-2. Open testfile.txt and change anything, save it
-3. Type check testfile.txt - you'll see it detects the change
-4. Type update testfile.txt to store the new hash
+If you want to see how the program works in practice, here is a quick experiment you can do yourself:
+
+**Step 1:** Open your terminal (Command Prompt, PowerShell, or Bash) in the project folder.
+
+**Step 2:** Let's create a simple text file to experiment with. Let's name it `test.txt` and write "Hello" inside it. 
+*(This is our important "log" file that we want to protect).*
+
+**Step 3:** Let the program scan it and save its original hash (its unique cryptographic signature). Type:
+> `./integrity-check init test.txt`
+*(Comment: The program just calculated the SHA-256 hash of the file and saved it in a secure location. Now it knows what the original looks like!)*
+
+**Step 4:** Let's check if everything is okay. Type:
+> `./integrity-check check test.txt`
+**Expected result:** `Status: Unmodified` 
+*(Comment: Makes sense! Nobody touched the file, so the hash matches the one we saved in Step 3).*
+
+**Step 5: Time to "hack" the file!** 
+Open `test.txt` (for example, with Notepad), add just one extra letter or space, and save it.
+
+**Step 6:** Let's run the check again to see if the program notices the difference. Type:
+> `./integrity-check check test.txt`
+**Expected result:** `Status: Modified (Hash mismatch)`
+*(Comment: See that? The status changed! Even one added letter changes the entire cryptographic hash of the file. This is exactly the goal of the program - to alert us immediately if someone touched or changed our files without permission!)*
+
+**Step 7:** If we want to tell the program "Relax, I made this change legally", we just update the hash:
+> `./integrity-check update test.txt`
 
 ## The Magic Line
 
