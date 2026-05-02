@@ -4,7 +4,6 @@ using System.Text.Json;
 string storageFile = "hashes.json";
 string command = args.Length > 0 ? args[0].ToLower() : "";
 
-// ========== INIT ==========
 if (command == "init")
 {
     if (args.Length < 2)
@@ -35,7 +34,6 @@ if (command == "init")
     Console.WriteLine($"Hashes stored successfully for {files.Length} file(s).");
 }
 
-// ========== CHECK ==========
 else if (command == "check")
 {
     if (args.Length < 2)
@@ -81,7 +79,6 @@ else if (command == "check")
     }
 }
 
-// ========== UPDATE ==========
 else if (command == "update")
 {
     if (args.Length < 2)
@@ -115,7 +112,6 @@ else if (command == "update")
     Console.WriteLine("Hash updated successfully.");
 }
 
-// ========== UNKNOWN COMMAND ==========
 else
 {
     Console.WriteLine("Usage:");
