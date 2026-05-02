@@ -5,6 +5,7 @@ learning about cybersecurity fundamentals - hashing.
 Hashing is the concept of taking any piece of data (a file, a password, a message)
 and turning it into a long, unique string of letters and numbers. Through this project
 i try to show you a really simple example of how these things work.
+This project was created with the help of AI tools.
 
 ## Why is HASHING important? What's the point of it?
 
