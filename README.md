@@ -1,8 +1,9 @@
 # File Integrity Checker
 
-Hi! This project explores one of the basics of cybersecurity — **hashing**. 
+Hello, everyone! This project explores one of the basics of cybersecurity — **hashing**. 
 Hashing is the concept of taking any piece of data (a file, a password, a message)
-and turning it into a long, unique string of letters and numbers. 
+and turning it into a long, unique string of letters and numbers. Through this project
+i try to show you a really simple example of how these things work.
 
 ## Why Hashing Matters for Security
 
@@ -13,9 +14,9 @@ the data, there's a core principle called the **C.I.A. Triad**:
 - **I**ntegrity — data can't be edited without your knowledge
 - **A**vailability — data is available whenever you need it
 
-Hashing helps with **Integrity**. By storing a "baseline" hash of a file and comparing it later, 
-you can instantly detect if someone modified that file — even by a single character.
-Through this project my goal is to show you how this simply works.
+Hashing helps with **Integrity**. By storing a hash of a file and comparing it later, 
+you can instantly detect if someone modified the file (and you will see yourself 
+when you are testing the project).
 
 ## How things work:
 
@@ -30,6 +31,5 @@ The entire concept boils down to one line of C#:
 ```csharp
 byte[] hashBytes = SHA256.HashData(fileBytes);
 ```
-That's pretty much it! The project is not perfect - it explores a very complex topic in a really simple way, but 
-regardless it's just meant to be a reference for how things work. I hope this was helpful to anybody interested
-in this topic :).
+That's pretty much it! The project is not perfect - it explores a very complex topic in a really
+simple way, but regardless it's just meant to be a reference for how things work. :).
