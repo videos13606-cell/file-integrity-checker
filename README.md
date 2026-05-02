@@ -1,11 +1,12 @@
 # File Integrity Checker
 
-Hello, everyone! This project explores one of the basics of cybersecurity — **hashing**. 
+Hello, everyone! This project is a simple tool I built while 
+learning about cybersecurity fundamentals - hashing.
 Hashing is the concept of taking any piece of data (a file, a password, a message)
 and turning it into a long, unique string of letters and numbers. Through this project
 i try to show you a really simple example of how these things work.
 
-## Why Hashing Matters for Security
+## Why is HASHING important? What's the point of it?
 
 For those who are unfamiliar, in cybersecurity when it comes to the state of
 the data, there's a core principle called the **C.I.A. Triad**:
