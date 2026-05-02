@@ -6,6 +6,8 @@ Hashing is the concept of taking any piece of data (a file, a password, a messag
 and turning it into a long, unique string of letters and numbers. Through this project
 i try to show you a really simple example of how these things work.
 This project was created with the help of AI tools.
+This project is also taken from this website:
+https://roadmap.sh/projects/file-integrity-checker
 
 ## Why is HASHING important? What's the point of it?
 
