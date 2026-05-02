@@ -39,11 +39,13 @@ If you want to see how the program works in practice, here is a quick experiment
 
 **Step 3:** Let the program scan it and save its original hash (its unique cryptographic signature). Type:
 > `./integrity-check init test.txt`
-*(Comment: The program just calculated the SHA-256 hash of the file and saved it in a secure location. Now it knows what the original looks like!)*
+
+The program just calculated the SHA-256 hash of the file and saved it in a secure location. Now it knows what the original looks like!
 
 **Step 4:** Let's check if everything is okay. Type:
 > `./integrity-check check test.txt`
-**Expected result:** `Status: Unmodified` 
+**Expected result:** Status: Unmodified
+
 Makes sense! Nobody touched the file, so the hash matches the one we saved in Step 3
 
 **Step 5: Time to "hack" the file!** 
@@ -51,10 +53,11 @@ Open `test.txt` (for example, with Notepad), add just one extra letter or space,
 
 **Step 6:** Let's run the check again to see if the program notices the difference. Type:
 > `./integrity-check check test.txt`
-**Expected result:** `Status: Modified (Hash mismatch)`
+**Expected result:** Status: Modified (Hash mismatch)
+
 See that? The status changed! Even one added letter changes the entire cryptographic hash of the file. This is exactly the goal of the program - to alert us immediately if someone touched or changed our files without permission!)
 
-**Step 7:** If we want to tell the program "Relax, I made this change legally", we just update the hash:
+**Step 7:** If we want to tell the program the change was intentional, we just update the hash:
 > `./integrity-check update test.txt`
 
 ## The Magic Line
