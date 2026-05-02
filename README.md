@@ -6,16 +6,18 @@ and turning it into a long, unique string of letters and numbers.
 
 ## Why Hashing Matters for Security
 
-In cybersecurity, there's a core principle called the **CIA Triad**:
+For those who are unfamiliar, in cybersecurity when it comes to the state of
+the data, there's a core principle called the **C.I.A. Triad**:
 
-- **C**onfidentiality — keeping data private
-- **I**ntegrity — ensuring data hasn't been tampered with
-- **A**vailability — making sure data is accessible when needed
+- **C**onfidentiality — data is only accessible to you
+- **I**ntegrity — data can't be edited without your knowledge
+- **A**vailability — data is available whenever you need it
 
 Hashing helps with **Integrity**. By storing a "baseline" hash of a file and comparing it later, 
 you can instantly detect if someone modified that file — even by a single character.
+Through this project my goal is to show you how this simply works.
 
-## What This Tool Does
+## How things work:
 
 - Scans a folder and creates SHA-256 hashes for every file (`init`)
 - Checks individual files against their stored hashes (`check`)
