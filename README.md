@@ -28,37 +28,40 @@ when you are testing the project).
 - Checks individual files against their stored hashes (`check`)
 - Lets you update the stored hash after legitimate changes (`update`)
 
-## Try it yourself (Step-by-Step Guide)
+## 🛠️ How to try it yourself (Beginner-friendly Guide)
 
-If you want to see how the program works in practice, here is a quick experiment you can do yourself:
+Never used GitHub or a command terminal before? No problem! Here is a simple, step-by-step guide to test my program on your own computer.
 
-**Step 1:** Open your terminal (I used Command Prompt) in the project folder.
+**Step 1: Get the code**
+Go to the top of this page, click the green **"<> Code"** button, and select **"Download ZIP"**. Extract (unzip) the downloaded folder somewhere easy to find, like your Desktop. Open the extracted folder.
 
-**Step 2:** Let's create a simple text file to experiment with. Let's name it `test.txt` and write "Hello" inside it. 
-*(This is our important "log" file that we want to protect).*
+**Step 2: Open the Command Terminal**
+Click on the address bar at the top of the folder window (where it says the folder path), delete the text, type `cmd`, and press **Enter**. A black screen (the terminal) will pop up. You are now ready!
 
-**Step 3:** Let the program scan it and save its original hash (its unique cryptographic signature). Type:
-> `./integrity-check init test.txt`
+*(Note: Make sure you have the .NET SDK installed on your computer to run C# code).*
 
-The program just calculated the SHA-256 hash of the file and saved it in a secure location. Now it knows what the original looks like!
+**Step 3: Create a "secret" file**
+Let's create a file to protect. In the black terminal, type this exactly and press Enter:
+> `echo "Hello" > secret.txt`
+*(Result: You just created a text file named 'secret.txt' in the folder. This is the file we want to protect from hackers).*
 
-**Step 4:** Let's check if everything is okay. Type:
-> `./integrity-check check test.txt`
-**Expected result:** Status: Unmodified
+**Step 4: Lock it in (Save the fingerprint)**
+Now, let's tell the program to remember exactly how this file looks. Type:
+> `dotnet run -- init secret.txt`
+*(Result: The program successfully saves a mathematical "fingerprint" of your file. If even a single byte changes later, the fingerprint won't match).*
 
-Makes sense! Nobody touched the file, so the hash matches the one we saved in Step 3
+**Step 5: Check if everything is safe**
+Let's make sure our file is untouched. Type:
+> `dotnet run -- check secret.txt`
+*(Result: You will see **Status: Unmodified**. This means nobody has messed with your file).*
 
-**Step 5: Time to "hack" the file!** 
-Open `test.txt` (for example, with Notepad), add just one extra letter or space, and save it.
+**Step 6: Play the Hacker!**
+Let's simulate an attack. Open the `secret.txt` file normally with Notepad, add an extra space or change "Hello" to "Hello!", and save it. 
 
-**Step 6:** Let's run the check again to see if the program notices the difference. Type:
-> `./integrity-check check test.txt`
-**Expected result:** Status: Modified (Hash mismatch)
-
-See that? The status changed! Even one added letter changes the entire cryptographic hash of the file. This is exactly the goal of the program - to alert us immediately if someone touched or changed our files without permission!)
-
-**Step 7:** If we want to tell the program the change was intentional, we just update the hash:
-> `./integrity-check update test.txt`
+**Step 7: Catch the change**
+Run the check command one more time in the terminal:
+> `dotnet run -- check secret.txt`
+*(Result: You will see **Status: Modified (Hash mismatch)**. The program instantly caught the unauthorized change because the new fingerprint doesn't match the original one!)*
 
 ## The Magic Line
 
