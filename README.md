@@ -32,7 +32,7 @@ when you are testing the project).
 
 If you want to see how the program works in practice, here is a quick experiment you can do yourself:
 
-**Step 1:** Open your terminal (Command Prompt, PowerShell, or Bash) in the project folder.
+**Step 1:** Open your terminal (I used Command Prompt) in the project folder.
 
 **Step 2:** Let's create a simple text file to experiment with. Let's name it `test.txt` and write "Hello" inside it. 
 *(This is our important "log" file that we want to protect).*
