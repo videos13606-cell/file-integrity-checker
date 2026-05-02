@@ -27,10 +27,10 @@ when you are testing the project).
 
 ## Try It Yourself!
 
-- Run the program and type init to create baseline hashes
-- Open testfile.txt and change anything, save it
-- Type check testfile.txt - you'll see it detects the change
-- Type update testfile.txt to store the new hash
+1. Run the program and type init to create baseline hashes
+2. Open testfile.txt and change anything, save it
+3. Type check testfile.txt - you'll see it detects the change
+4. Type update testfile.txt to store the new hash
 
 ## The Magic Line
 
