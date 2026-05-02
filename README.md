@@ -24,6 +24,13 @@ when you are testing the project).
 - Checks individual files against their stored hashes (`check`)
 - Lets you update the stored hash after legitimate changes (`update`)
 
+## Try It Yourself!
+
+- Run the program and type init to create baseline hashes
+- Open testfile.txt and change anything, save it
+- Type check testfile.txt - you'll see it detects the change
+- Type update testfile.txt to store the new hash
+
 ## The Magic Line
 
 The entire concept boils down to one line of C#:
